@@ -174,7 +174,6 @@ LIMIT 5
 Insight:
 Customer ID 3 generated the highest total sales with approximately:
 38,440
-This type of analysis can help identify high-value customers.
 ```
 
 9. **Write a SQL query to find the number of unique customers who purchased items from each category.**:
