@@ -38,7 +38,6 @@ CREATE TABLE retail_sales
     price_per_unit FLOAT,	
     cogs FLOAT,
     total_sale FLOAT
-);
 ```
 
 ### 2. Data Exploration & Cleaning
@@ -98,6 +97,10 @@ SELECT
     COUNT(*) as total_orders
 FROM retail_sales
 GROUP BY 1
+
+Insight :
+Electronics generated the highest total sales, followed closely by Clothing.
+However, Clothing had the highest number of transactions.
 ```
 
 4. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.**:
@@ -106,12 +109,19 @@ SELECT
     ROUND(AVG(age), 2) as avg_age
 FROM retail_sales
 WHERE category = 'Beauty'
+
+Insight
+The average age of customers purchasing Beauty products was approximately:
 ```
 
 5. **Write a SQL query to find all transactions where the total_sale is greater than 1000.**:
 ```sql
 SELECT * FROM retail_sales
 WHERE total_sale > 1000
+
+Insight:
+The analysis identified 306 transactions with sales greater than 1,000.
+This can be useful for understanding high-value purchases and premium transactions.
 ```
 
 6. **Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.**:
@@ -126,6 +136,8 @@ GROUP
     category,
     gender
 ORDER BY 1
+Insight:
+This analysis helps understand how purchasing activity differs between male and female customers across product categories.
 ```
 
 7. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year**:
@@ -145,6 +157,9 @@ FROM retail_sales
 GROUP BY 1, 2
 ) as t1
 WHERE rank = 1
+Insight:
+The dataset contains sales from 2022,2023
+April 2022 had the highest average transaction value at approximately 485.19.
 ```
 
 8. **Write a SQL query to find the top 5 customers based on the highest total sales **:
@@ -156,6 +171,10 @@ FROM retail_sales
 GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 5
+Insight:
+Customer ID 3 generated the highest total sales with approximately:
+38,440
+This type of analysis can help identify high-value customers.
 ```
 
 9. **Write a SQL query to find the number of unique customers who purchased items from each category.**:
@@ -165,6 +184,8 @@ SELECT
     COUNT(DISTINCT customer_id) as cnt_unique_cs
 FROM retail_sales
 GROUP BY category
+Insight
+Clothing had the highest number of unique customers.
 ```
 
 10. **Write a SQL query to create each shift and number of orders (Example Morning <12, Afternoon Between 12 & 17, Evening >17)**:
@@ -185,22 +206,8 @@ SELECT
     COUNT(*) as total_orders    
 FROM hourly_sale
 GROUP BY shift
+Insight:
+The Evening shift recorded the highest number of transactions, representing the busiest period in the dataset.
 ```
 
-## Findings
-
-- **Customer Demographics**: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
-- **High-Value Transactions**: Several transactions had a total sale amount greater than 1000, indicating premium purchases.
-- **Sales Trends**: Monthly analysis shows variations in sales, helping identify peak seasons.
-- **Customer Insights**: The analysis identifies the top-spending customers and the most popular product categories.
-
-## Reports
-
-- **Sales Summary**: A detailed report summarizing total sales, customer demographics, and category performance.
-- **Trend Analysis**: Insights into sales trends across different months and shifts.
-- **Customer Insights**: Reports on top customers and unique customer counts per category.
-
-## Conclusion
-
-This project serves as a comprehensive introduction to SQL for data analysts, covering database setup, data cleaning, exploratory data analysis, and business-driven SQL queries. The findings from this project can help drive business decisions by understanding sales patterns, customer behavior, and product performance.
 
