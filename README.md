@@ -1,26 +1,24 @@
-# Retail Sales Analysis SQL Project
+PostgreSQL | SQL | pgAdmin | GitHub 
 
-## Project Overview
-
-**Project Title**: Retail Sales Analysis  
-**Level**: Beginner  
-**Database**: `p1_retail_db`
+##Technologies Used
+* PostgreSQL
+* SQL
+* pgAdmin
+* GitHub
 
 This project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data. The project involves setting up a retail sales database, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries. This project is ideal for those who are starting their journey in data analysis and want to build a solid foundation in SQL.
 
-## Objectives
+## Project Workflow
 
-1. **Set up a retail sales database**: Create and populate a retail sales database with the provided sales data.
-2. **Data Cleaning**: Identify and remove any records with missing or null values.
-3. **Exploratory Data Analysis (EDA)**: Perform basic exploratory data analysis to understand the dataset.
-4. **Business Analysis**: Use SQL to answer specific business questions and derive insights from the sales data.
+**Raw CSV Data → PostgreSQL Database → Data Cleaning → Exploratory Data Analysis → SQL Analysis → Business Insights**
 
-## Project Structure
-
-### 1. Database Setup
-
-- **Database Creation**: The project starts by creating a database named `p1_retail_db`.
-- **Table Creation**: A table named `retail_sales` is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
+1. Imported the raw retail sales data into PostgreSQL.
+2. Created the `retail_sales` table and defined the required columns.
+3. Checked the dataset for missing and null values.
+4. Cleaned the dataset by removing incomplete records.
+5. Performed exploratory data analysis using SQL.
+6. Answered business questions using aggregation, filtering, CTEs, and window functions.
+7. Extracted key business insights from the analysis.
 
 ```sql
 CREATE DATABASE p1_retail_db;
@@ -110,8 +108,10 @@ SELECT
 FROM retail_sales
 WHERE category = 'Beauty'
 
-Insight
-The average age of customers purchasing Beauty products was approximately:
+Insighs:
+
+The average age of customers purchasing Beauty products was approximately 40 years**.
+
 ```
 
 5. **Write a SQL query to find all transactions where the total_sale is greater than 1000.**:
@@ -196,7 +196,7 @@ SELECT *,
     CASE
         WHEN EXTRACT(HOUR FROM sale_time) < 12 THEN 'Morning'
         WHEN EXTRACT(HOUR FROM sale_time) BETWEEN 12 AND 17 THEN 'Afternoon'
-        ELSE 'Evening'
+        Else 'Evening'
     END as shift
 FROM retail_sales
 )
@@ -209,4 +209,31 @@ Insight:
 The Evening shift recorded the highest number of transactions, representing the busiest period in the dataset.
 ```
 
+## Key Business Insights
+
+Top Performing Category:** Electronics generated the highest total sales, making it the strongest revenue-generating category.
+Transaction Volume:** Clothing recorded the highest number of transactions, indicating strong customer demand.
+High-Value Transactions:** The analysis identified **306 transactions** with total sales greater than 1,000.
+Customer Spending:** Customer ID **3** was the highest-spending customer, generating approximately **38,440** in total sales.
+Customer Reach:** Clothing had the highest number of unique customers among the product categories.
+Sales Timing:** The **Evening** shift recorded the highest number of transactions, making it the busiest sales period.
+Customer Demographics:** Customers purchasing Beauty products had an average age of approximately **40 years**.
+Monthly Performance:** April 2022 recorded the highest average transaction value at approximately **485.19**.
+
+
+## SQL Skills Demonstrated
+
+* Database and table creation
+* Data cleaning and NULL value handling
+* Data exploration
+* Filtering with `WHERE`
+* Aggregations using `SUM`, `AVG`, and `COUNT`
+* `GROUP BY` and `ORDER BY`
+* `CASE WHEN`
+* Common Table Expressions (CTEs)
+* Window Functions
+* `RANK()`
+* `COUNT(DISTINCT)`
+* Date and time analysis
+* Business-oriented data analysis
 
