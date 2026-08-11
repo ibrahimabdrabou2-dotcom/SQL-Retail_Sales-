@@ -1,7 +1,5 @@
 ##Retail_Sales project 
 
-##PostgreSQL | SQL | pgAdmin | GitHub 
-
 ##Technologies Used
 * PostgreSQL
 * SQL
