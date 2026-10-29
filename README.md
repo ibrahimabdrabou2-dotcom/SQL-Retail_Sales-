@@ -209,31 +209,131 @@ Insight:
 The Evening shift recorded the highest number of transactions, representing the busiest period in the dataset.
 ```
 
-## Key Business Insights
+# Retail Sales Analysis Using SQL
 
-Top Performing Category:** Electronics generated the highest total sales, making it the strongest revenue-generating category.
-Transaction Volume:** Clothing recorded the highest number of transactions, indicating strong customer demand.
-High-Value Transactions:** The analysis identified **306 transactions** with total sales greater than 1,000.
-Customer Spending:** Customer ID **3** was the highest-spending customer, generating approximately **38,440** in total sales.
-Customer Reach:** Clothing had the highest number of unique customers among the product categories.
-Sales Timing:** The **Evening** shift recorded the highest number of transactions, making it the busiest sales period.
-Customer Demographics:** Customers purchasing Beauty products had an average age of approximately **40 years**.
-Monthly Performance:** April 2022 recorded the highest average transaction value at approximately **485.19**.
+A SQL-based data analytics project focused on exploring retail transactions, analyzing customer purchasing behavior, and identifying sales patterns using PostgreSQL.
 
+## 📌 Project Overview
 
-## SQL Skills Demonstrated
+This project demonstrates how SQL can be used to transform retail transaction data into structured analysis that supports business understanding and decision-making.
 
-* Database and table creation
-* Data cleaning and NULL value handling
-* Data exploration
-* Filtering with `WHERE`
-* Aggregations using `SUM`, `AVG`, and `COUNT`
-* `GROUP BY` and `ORDER BY`
-* `CASE WHEN`
-* Common Table Expressions (CTEs)
-* Window Functions
-* `RANK()`
-* `COUNT(DISTINCT)`
-* Date and time analysis
-* Business-oriented data analysis
+The workflow covers database creation, data exploration, data quality checks, and business analysis through SQL queries. The analysis focuses on sales performance, product categories, customer behavior, monthly trends, and purchasing activity throughout the day.
+
+## 🎯 Business Objectives
+
+- Explore retail transaction data and understand its structure.
+- Identify missing values and assess data quality.
+- Analyze sales performance across product categories.
+- Examine customer demographics and purchasing behavior.
+- Identify high-value transactions and top-spending customers.
+- Compare transaction counts across gender and product categories.
+- Analyze monthly average transaction values and identify peak months by year.
+- Understand purchasing activity across different times of day.
+
+## 🛠️ Tools & Technologies
+
+- **PostgreSQL** — Database creation and SQL analysis.
+- **SQL** — Data exploration, filtering, aggregation, and business analysis.
+- **GitHub** — Version control and project documentation.
+- **CSV** — Retail transaction dataset.
+
+## 📂 Repository Contents
+
+| File | Description |
+|---|---|
+| `SQL Project (retail sales).sql` | SQL script containing database setup, data quality checks, and analytical queries |
+| `retail_sales.csv` | Retail transaction dataset |
+| `README.md` | Project documentation |
+
+## 🔄 Project Workflow
+
+### 1. Database Setup
+
+Created a PostgreSQL database named `p1_retail_db` and a `retail_sales` table to organize the transaction-level data.
+
+The table includes transaction identifiers, sales dates and times, customer attributes, product categories, quantities, unit prices, cost of goods sold, and total sales.
+
+### 2. Data Exploration
+
+Explored the dataset using SQL to understand its structure and identify important characteristics, including:
+
+- Total transaction records.
+- Unique customers.
+- Available product categories.
+- Missing values in important columns.
+
+### 3. Data Quality Checks
+
+Used SQL queries to identify records containing missing values and demonstrate data cleaning techniques.
+
+These checks help assess the reliability of the dataset before performing further analysis.
+
+### 4. Business Analysis
+
+Developed SQL queries to investigate retail business questions using filtering, aggregation, date functions, conditional logic, and window functions.
+
+## 📊 Business Questions Answered
+
+| # | Business Question | SQL Techniques |
+|---:|---|---|
+| 1 | Retrieve transactions for a specific date | `WHERE` |
+| 2 | Find clothing transactions with quantities of at least four during November 2022 | `WHERE`, `AND`, date functions |
+| 3 | Calculate total sales and transaction counts by category | `SUM()`, `COUNT()`, `GROUP BY` |
+| 4 | Calculate the average customer age for Beauty purchases | `AVG()`, `ROUND()` |
+| 5 | Identify high-value transactions exceeding 1,000 | Filtering |
+| 6 | Compare transaction counts by gender and category | `COUNT()`, `GROUP BY` |
+| 7 | Identify the month with the highest average transaction value in each year | `AVG()`, `EXTRACT()`, `RANK()` |
+| 8 | Identify the top five customers by total sales | `SUM()`, `ORDER BY`, `LIMIT` |
+| 9 | Count unique customers within each category | `COUNT(DISTINCT ...)` |
+| 10 | Classify transactions into Morning, Afternoon, and Evening shifts | `CASE`, `CTE`, date/time functions |
+
+## 🧠 SQL Skills Demonstrated
+
+- **Data Definition:** `CREATE DATABASE`, `CREATE TABLE`
+- **Data Exploration:** `SELECT`, `DISTINCT`, `COUNT()`
+- **Data Quality:** `IS NULL`, filtering records with missing values
+- **Aggregation:** `SUM()`, `AVG()`, `COUNT()`, `ROUND()`
+- **Grouping and Filtering:** `GROUP BY`, `WHERE`, `ORDER BY`, `LIMIT`
+- **Conditional Logic:** `CASE WHEN`
+- **Date and Time Analysis:** `EXTRACT()`, `TO_CHAR()`
+- **Common Table Expressions:** `WITH`
+- **Window Functions:** `RANK()` with `PARTITION BY`
+
+## 💼 Business Value
+
+This analysis demonstrates how SQL can support retail performance monitoring and customer analysis by helping answer questions such as:
+
+- Which product categories generate the highest sales?
+- Which customers contribute the most to total sales?
+- How does purchasing behavior vary across customer groups?
+- Which months have the highest average transaction values?
+- How is transaction activity distributed throughout the day?
+- What proportion of the dataset requires data quality attention?
+
+## 🚀 How to Run the Project
+
+1. Download or clone this repository.
+2. Open the SQL script in PostgreSQL using pgAdmin or another compatible SQL client.
+3. Create the database and table using the provided SQL statements.
+4. Import `retail_sales.csv` into the `retail_sales` table, ensuring the column names and data types match the table definition.
+5. Execute the queries section by section.
+6. Review the query results to investigate the business questions.
+
+**Note:** Run the data quality checks before any deletion statements, and verify the affected rows before modifying the source table.
+
+## 📈 Key Takeaways
+
+The project demonstrates a practical SQL workflow for retail analytics, from database setup and data quality checks to business-oriented analysis.
+
+It provides hands-on experience in querying transactional data, summarizing sales performance, analyzing customers, ranking results, and extracting insights from dates and times.
+
+The business findings should be documented using verified query results rather than assumptions about the dataset.
+
+---
+
+**Project Type:** Retail Data Analytics  
+**Database:** PostgreSQL  
+**Language:** SQL  
+**Core Focus:** Data Exploration | Data Quality | Sales Analysis | Customer Analysis | Window Functions
+
 
